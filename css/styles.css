@@ -231,9 +231,7 @@ ul {
   border-radius: 4px;
   cursor: pointer;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: var(--main-animation-cubic);
+  transition: background-color 250ms var(--main-animation-cubic);
 }
 
 .hero-button:hover,
@@ -426,8 +424,8 @@ ul {
 }
 .footer .container {
   display: flex;
-  gap: 70px;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .footer-logo {
@@ -505,6 +503,65 @@ ul {
   background-color: var(--accent-text-color);
 }
 
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-background-color);
+}
+
+.email-item {
+  display: flex;
+  gap: 10px;
+}
+
+.email-input {
+  display: flex;
+  align-items: center;
+  width: 358px;
+  height: 50px;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--footer-address-link);
+  background-color: var(--second-background-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+  border-radius: 4px;
+}
+
+.subscribe-button {
+  display: flex;
+  padding: 10px 28px;
+  gap: 10px;
+  background-color: var(--accent-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--main-background-color);
+  fill: var(--main-background-color);
+  cursor: pointer;
+
+  transition: background-color 250ms var(--main-animation-cubic);
+}
+
+.subscribe-button:hover,
+.subscribe-button:focus {
+  background-color: var(--hero-button-accent-color);
+}
+
 /* Modal Window */
 
 .backdrop {
@@ -526,23 +583,30 @@ ul {
 }
 
 .backdrop.is-hidden .modal-window {
-  transform: translate(-50%, -50%) scale(1.2) ;
+  transform: translate(-50%, -50%) scale(1.2);
 }
 
 .modal-window {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   min-width: 528px;
   min-height: 581px;
   left: 50%;
   top: 50%;
+  padding: 40px;
   background: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   z-index: 10;
 
-  transform:translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--main-animation-cubic);
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .modal-close-button {
@@ -572,6 +636,88 @@ ul {
   transform: rotate(180deg) scale(1.2);
 }
 
+.modal-window-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+}
+
+.modal-window-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--description-text-color);
+}
+
+.modal-window-input {
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 14px 42px;
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--title-text-color);
+  background: var(--main-background-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms var(--main-animation-cubic);
+}
+
+.modal-window-input:hover,
+.modal-window-input:focus,
+.modal-window-comment:hover,
+.modal-window-comment:focus {
+  border: 1px solid var(--accent-text-color);
+}
+
+.modal-window-comment {
+  resize: none;
+  padding: 16px 12px;
+  margin-bottom: 20px;
+}
+
+.checkbox-link {
+  color: var(--accent-text-color);
+}
+
+.modal-send-button {
+  display: block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 52px;
+  background-color: var(--accent-text-color);
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: var(--main-background-color);
+  cursor: pointer;
+
+  transition: background-color 250ms var(--main-animation-cubic), box-shadow 250ms var(--main-animation-cubic);
+}
+
+.modal-send-button:hover,
+.modal-send-button:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--hero-button-accent-color);
+}
+
+.checkbox-link:hover,
+.checkbox-link:focus {
+  text-decoration: underline;
+}
 /* Portfolio styles */
 
 .filters-list {
