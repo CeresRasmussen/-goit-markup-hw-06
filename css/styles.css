@@ -587,8 +587,6 @@ ul {
 }
 
 .modal-window {
-  display: flex;
-  flex-direction: column;
   position: absolute;
   min-width: 528px;
   min-height: 581px;
@@ -599,10 +597,15 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  z-index: 10;
+  z-index: 2;
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--main-animation-cubic);
+}
+
+.modal-form-field {
+  display: flex;
+  flex-direction: column;
 }
 
 body.modal-open {
@@ -647,6 +650,12 @@ body.modal-open {
   color: var(--title-text-color);
 }
 
+.modal-input-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-window-label {
   margin-bottom: 4px;
   font-size: 12px;
@@ -656,6 +665,7 @@ body.modal-open {
 }
 
 .modal-window-input {
+  position: relative;
   height: 40px;
   margin-bottom: 10px;
   padding: 14px 42px;
@@ -666,8 +676,20 @@ body.modal-open {
   background: var(--main-background-color);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
 
   transition: border 250ms var(--main-animation-cubic);
+}
+
+.modal-window-comment {
+  resize: none;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--title-text-color);
+  outline: none;
 }
 
 .modal-window-input:hover,
@@ -677,10 +699,19 @@ body.modal-open {
   border: 1px solid var(--accent-text-color);
 }
 
-.modal-window-comment {
-  resize: none;
-  padding: 16px 12px;
-  margin-bottom: 20px;
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-25%);
+  fill: var(--title-text-color);
+
+  transition: fill 250ms var(--main-animation-cubic);
+}
+
+.modal-input-form:hover .modal-form-icon,
+.modal-input-form:focus .modal-form-icon {
+  fill: var(--accent-text-color);
 }
 
 .checkbox-link {
@@ -705,7 +736,8 @@ body.modal-open {
   color: var(--main-background-color);
   cursor: pointer;
 
-  transition: background-color 250ms var(--main-animation-cubic), box-shadow 250ms var(--main-animation-cubic);
+  transition: background-color 250ms var(--main-animation-cubic),
+    box-shadow 250ms var(--main-animation-cubic);
 }
 
 .modal-send-button:hover,
