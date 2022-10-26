@@ -714,6 +714,7 @@ body.modal-open {
 .modal-checkbox-label {
   position: relative;
   padding-left: 23px;
+  cursor: pointer;
 }
 
 .checkbox {
