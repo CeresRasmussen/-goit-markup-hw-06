@@ -657,6 +657,7 @@ body.modal-open {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--description-text-color);
+  cursor: pointer;
 }
 
 .modal-window-input {
