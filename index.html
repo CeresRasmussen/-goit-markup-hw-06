@@ -436,6 +436,8 @@
               name="email"
               id="sub-email"
               placeholder="E-mail"
+              pattern="@"
+              title="Пошта повинна містити знак '@'"
             />
             <button type="submit" class="subscribe-button">
               Підписатися
@@ -462,7 +464,14 @@
           <h2 class="modal-window-title">Залиште свої дані, ми вам передзвонимо</h2>
           <label class="modal-window-label" for="name">Ім'я</label>
           <div class="modal-input-form">
-            <input class="modal-window-input" type="text" name="name" id="name" autofocus />
+            <input
+              class="modal-window-input"
+              type="text"
+              name="name"
+              id="name"
+              required
+              autofocus
+            />
             <svg class="modal-form-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-contact"></use>
             </svg>
@@ -470,7 +479,7 @@
 
           <label class="modal-window-label" for="tel">Телефон</label>
           <div class="modal-input-form">
-            <input class="modal-window-input" type="tel" name="telephone" id="tel" />
+            <input class="modal-window-input" type="tel" name="telephone" id="tel" required />
             <svg class="modal-form-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-phone"></use>
             </svg>
@@ -478,7 +487,15 @@
 
           <label class="modal-window-label" for="email">Пошта</label>
           <div class="modal-input-form">
-            <input class="modal-window-input" type="email" name="email" id="email" />
+            <input
+              class="modal-window-input"
+              type="email"
+              name="email"
+              id="email"
+              pattern="@"
+              title="Пошта повинна містити знак '@'"
+              required
+            />
             <svg class="modal-form-icon" width="18" height="18">
               <use href="./images/icons.svg#icon-email"></use>
             </svg>
