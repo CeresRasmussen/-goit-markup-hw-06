@@ -690,11 +690,14 @@ body.modal-open {
   transition: border 250ms var(--main-animation-cubic);
 }
 
-.modal-window-input:hover,
-.modal-window-input:focus,
+.modal-window-label:hover .modal-window-input,
+.modal-window-label:focus .modal-window-input,
+.modal-input-form:hover .modal-form-icon,
+.modal-input-form:focus-within .modal-form-icon,
 .modal-window-comment:hover,
 .modal-window-comment:focus {
   border-color: var(--accent-text-color);
+  fill: var(--accent-text-color);
 }
 
 .modal-form-icon {
@@ -705,11 +708,6 @@ body.modal-open {
   fill: var(--title-text-color);
 
   transition: fill 250ms var(--main-animation-cubic);
-}
-
-.modal-input-form:hover .modal-form-icon,
-.modal-input-form:focus-within .modal-form-icon {
-  fill: var(--accent-text-color);
 }
 
 .modal-checkbox-label {
